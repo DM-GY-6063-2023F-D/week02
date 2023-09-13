@@ -2,6 +2,9 @@ let eyeWidth = 100;
 let faceWidth = 300;
 let pupilWidth = 50;
 
+let leftEyeWidth = 70;
+let rightEyeWidth = 70;
+
 function setup() {
   createCanvas(800, 600);
 }
@@ -9,48 +12,78 @@ function setup() {
 function draw() {
   background(200, 0, 100);
 
-  fill("green");
-  stroke(0);
-  strokeWeight(1);
-  ellipse(200, 400, faceWidth, faceWidth);
-  stroke(0);
-  fill("orange");
-  ellipse(100, 300, eyeWidth, eyeWidth);
-  ellipse(300, 300, eyeWidth, eyeWidth);
+  if(mouseIsPressed) {
+    fill("green");
+    stroke(0);
+    strokeWeight(1);
+    ellipse(200, 400, faceWidth, faceWidth);
+    stroke(0);
+    fill("orange");
+    ellipse(100, 300, eyeWidth, eyeWidth);
+    ellipse(300, 300, eyeWidth, eyeWidth);
 
-  fill("black");
-  ellipse(100, 300, pupilWidth/2, pupilWidth);
-  ellipse(300, 300, pupilWidth/2, pupilWidth);
+    fill("black");
+    ellipse(100, 300, pupilWidth/2, pupilWidth);
+    ellipse(300, 300, pupilWidth/2, pupilWidth);
 
-  fill(222);
-  noStroke();
-  arc(200, 300, 200, 200, 3 * HALF_PI - PI / 10, 3 * HALF_PI + PI / 10);
+    fill(222);
+    noStroke();
+    arc(200, 300, 200, 200, 3 * HALF_PI - PI / 10, 3 * HALF_PI + PI / 10);
 
-  stroke(0);
-  strokeWeight(3);
-  line(100, 450, 250, 500);
+    stroke(0);
+    strokeWeight(3);
+    line(100, 450, 250, 500);
 
+    translate(400, 0);
 
-  translate(400, 0);
+    fill("green");
+    stroke(0);
+    strokeWeight(1);
+    ellipse(200, 400, faceWidth, faceWidth);
+    stroke(0);
+    fill("orange");
+    ellipse(100, 300, eyeWidth, eyeWidth);
+    ellipse(300, 300, eyeWidth, eyeWidth);
 
-  fill("green");
-  stroke(0);
-  strokeWeight(1);
-  ellipse(200, 400, faceWidth, faceWidth);
-  stroke(0);
-  fill("orange");
-  ellipse(100, 300, eyeWidth, eyeWidth);
-  ellipse(300, 300, eyeWidth, eyeWidth);
+    fill("black");
+    ellipse(100, 300, pupilWidth/2, pupilWidth);
+    ellipse(300, 300, pupilWidth/2, pupilWidth);
 
-  fill("black");
-  ellipse(100, 300, pupilWidth/2, pupilWidth);
-  ellipse(300, 300, pupilWidth/2, pupilWidth);
+    fill(222);
+    noStroke();
+    arc(200, 300, 200, 200, 3 * HALF_PI - PI / 10, 3 * HALF_PI + PI / 10);
 
-  fill(222);
-  noStroke();
-  arc(200, 300, 200, 200, 3 * HALF_PI - PI / 10, 3 * HALF_PI + PI / 10);
+    stroke(0);
+    strokeWeight(3);
+    line(100, 450, 250, 500);
+  } else {
+    fill(255, 0, 0);
+    ellipse(350, 350, 300, 300);
 
-  stroke(0);
-  strokeWeight(3);
-  line(100, 450, 250, 500);
+    noStroke();
+
+    fill(255);
+    ellipse(300, 300, leftEyeWidth, leftEyeWidth);
+    ellipse(300, 330, leftEyeWidth, leftEyeWidth);
+    rect(300 - leftEyeWidth/2, 299, leftEyeWidth, 32);
+
+    fill(0);
+    ellipse(300 - leftEyeWidth/8, 300 - leftEyeWidth/8, leftEyeWidth/2, leftEyeWidth/2);
+
+    fill(255);
+    ellipse(400, 300, rightEyeWidth, rightEyeWidth);
+    ellipse(400, 330, rightEyeWidth, rightEyeWidth);
+    rect(400 - rightEyeWidth/2, 299, rightEyeWidth, 32);
+
+    fill(0);
+    ellipse(400 - rightEyeWidth/8, 300 - rightEyeWidth/8, rightEyeWidth/2, rightEyeWidth/2);
+
+    fill(120);
+    arc(350, 260, 200, 200, -PI/2 - PI / 6, -PI/2 + PI / 6);
+
+    fill(0);
+    arc(350, 450, 80, 70, PI-PI/8, PI/8);
+    // arc(350, 430, 80, 70, -PI/8, PI-PI/8);
+  }
 }
+
